@@ -24,6 +24,9 @@ I have cloned figma design of HyggeX static webpage using React + Tailwind CSS a
 
 ## How website look like
 
+**You can go through the whole website deployed link is —**
+[https://hyggex-lime.vercel.app/](https://hyggex-lime.vercel.app/)
+
 <img src="/img.png" alt="website"/>
 
 # Getting Started with Create React App
