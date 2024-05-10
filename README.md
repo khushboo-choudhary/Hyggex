@@ -1,3 +1,31 @@
+# Hyggex Assignment
+I have cloned figma design of HyggeX static webpage using React + Tailwind CSS and deployed it on Vercel.
+
+# Run in local and Installation
+
+    1. Clone the repo
+
+        ### git clone https://github.com/khushboo-choudhary/hyggex.git
+
+        ### cd hyggex
+
+    2. Install NPM Packages
+        
+        ### npm install
+
+    3. Build and Start the Server
+            
+        ### npm start
+
+    4. Vercel Link 
+
+        ### `https://hyggex-lime.vercel.app/`    
+
+
+## How website look like
+
+<img src="/img.png" alt="website"/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
