@@ -110,7 +110,7 @@ const Dashboard = () => {
             >
               {/* first div for flipped content */}
               <div
-                className={`absolute mx-4 bg-gradient-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] p-4 2xl:p-8 transform rotate-y-180 ${
+                className={`absolute mx-4 bg-gradient-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] p-4 2xl:p-8 max-sm:w-[380px] transform rotate-y-180 ${
                   !flipped ? "visible" : "invisible"
                 }`}
                 style={{ backfaceVisibility: "hidden" }}
@@ -149,7 +149,7 @@ const Dashboard = () => {
               </div>
               {/* Second div for flipped content */}
               <div
-                className={`absolute mx-4 bg-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] p-4 2xl:p-8 transform ${
+                className={`absolute mx-4 bg-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] max-sm:w-[380px] p-4 2xl:p-8 transform ${
                   flipped ? "visible" : "invisible"
                 }`}
                 style={{ backfaceVisibility: "hidden", rotateY: 180 }}
@@ -189,7 +189,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="flex justify-center mt-[500px]">
+          <div className="flex justify-center mt-[500px] max-sm:mt-[270px]">
             <div className="flex justify-between w-[340px] lg:w-[712px] 2xl:w-[1000px] sm:px-5 lg:px-9 2xl:px-8 py-5">
               <span className="flex flex-col justify-center">
                 <svg
