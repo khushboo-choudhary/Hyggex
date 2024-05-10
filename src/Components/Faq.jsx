@@ -29,7 +29,7 @@ export default function Faq() {
 
 
   return (
-    <div className="px-5 overflow-y-auto">
+    <div className="lg:px-20 lg:py-8 2xl:px-[200px] px-5 overflow-y-auto">
       <h1 className="font-inter text-3xl md:text-4xl 2xl:text-5xl font-bold leading-none tracking-tight text-left mb-[30px] mt-[55px] md:mt-[100px] text-transparent bg-clip-text bg-gradient-to-b from-[#06286E] to-[#164EC0]">
         FAQ
       </h1>
