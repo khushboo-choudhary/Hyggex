@@ -1,4 +1,11 @@
+import React, { useState } from "react";
+
 const Dashboard = () => {
+  const [flipped, setFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setFlipped(!flipped);
+  };
   return (
     <div className="lg:px-20 lg:py-8 2xl:px-[200px]">
       <div className="flex justify-start text-gray-500 lg:text-[18px] p-4 text-xs md:text-md 2xl:text-2xl">
@@ -96,43 +103,93 @@ const Dashboard = () => {
 
       <div>
         <div>
-          <div className="flex justify-center">
-            <div className="mx-4 bg-gradient-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] p-4 2xl:p-8">
-              <div className="flex w-full h-[30px] justify-between">
-                <svg
-                  viewBox="0 0 20 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="cursor-pointer z-20 w-[20px] h-[30px] 2xl:w-[40px] 2xl:h-[50px]"
-                >
-                  <path
-                    d="M5.75824 27.7612C5.75824 28.5405 6.39585 29.1781 7.17515 29.1781H12.8428C13.6221 29.1781 14.2597 28.5405 14.2597 27.7612V26.3443H5.75824V27.7612ZM10.009 0.839813C4.53969 0.839813 0.0905762 5.28893 0.0905762 10.7582C0.0905762 14.1305 1.77671 17.0918 4.34132 18.8913V22.0935C4.34132 22.8728 4.97893 23.5105 5.75824 23.5105H14.2597C15.039 23.5105 15.6766 22.8728 15.6766 22.0935V18.8913C18.2413 17.0918 19.9274 14.1305 19.9274 10.7582C19.9274 5.28893 15.4783 0.839813 10.009 0.839813ZM14.0472 16.5676L12.8428 17.4177V20.6766H7.17515V17.4177L5.97077 16.5676C5.03205 15.9168 4.26472 15.0486 3.73425 14.037C3.20378 13.0254 2.92593 11.9005 2.92441 10.7582C2.92441 6.84753 6.0983 3.67364 10.009 3.67364C13.9197 3.67364 17.0936 6.84753 17.0936 10.7582C17.0936 13.0678 15.96 15.2357 14.0472 16.5676Z"
-                    fill="#F5F5F5"
-                  />
-                </svg>
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 26 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="cursor-pointer z-20 2xl:w-[40px] 2xl:h-[50px]"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M15.8249 3.50143V0.582581C21.5067 1.87197 25.7433 6.94453 25.7433 13.0089C25.7433 19.0733 21.5067 24.1459 15.8249 25.4353V22.5164C19.9198 21.2979 22.9094 17.5005 22.9094 13.0089C22.9094 8.51731 19.9198 4.71997 15.8249 3.50143ZM0.2388 8.75818V17.2597H5.90646L12.991 24.3443V1.67361L5.90646 8.75818H0.2388ZM19.3672 13.0089C19.3669 11.8217 19.0351 10.6582 18.4093 9.64934C17.7834 8.64049 16.8884 7.8264 15.8249 7.29876V18.7049C17.9219 17.6706 19.3672 15.5169 19.3672 13.0089Z"
-                    fill="#F5F5F5"
-                  />
-                </svg>
+          <div className="relative" style={{ perspective: "1000px" }}>
+            <div
+              className="flex justify-center transition-transform duration-500"
+              onClick={handleFlip}
+            >
+              {/* first div for flipped content */}
+              <div
+                className={`absolute mx-4 bg-gradient-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] p-4 2xl:p-8 transform rotate-y-180 ${
+                  !flipped ? "visible" : "invisible"
+                }`}
+                style={{ backfaceVisibility: "hidden" }}
+              >
+                <div className="flex w-full h-[30px] justify-between">
+                  <svg
+                    viewBox="0 0 20 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="cursor-pointer z-20 w-[20px] h-[30px] 2xl:w-[40px] 2xl:h-[50px]"
+                  >
+                    <path
+                      d="M5.75824 27.7612C5.75824 28.5405 6.39585 29.1781 7.17515 29.1781H12.8428C13.6221 29.1781 14.2597 28.5405 14.2597 27.7612V26.3443H5.75824V27.7612ZM10.009 0.839813C4.53969 0.839813 0.0905762 5.28893 0.0905762 10.7582C0.0905762 14.1305 1.77671 17.0918 4.34132 18.8913V22.0935C4.34132 22.8728 4.97893 23.5105 5.75824 23.5105H14.2597C15.039 23.5105 15.6766 22.8728 15.6766 22.0935V18.8913C18.2413 17.0918 19.9274 14.1305 19.9274 10.7582C19.9274 5.28893 15.4783 0.839813 10.009 0.839813ZM14.0472 16.5676L12.8428 17.4177V20.6766H7.17515V17.4177L5.97077 16.5676C5.03205 15.9168 4.26472 15.0486 3.73425 14.037C3.20378 13.0254 2.92593 11.9005 2.92441 10.7582C2.92441 6.84753 6.0983 3.67364 10.009 3.67364C13.9197 3.67364 17.0936 6.84753 17.0936 10.7582C17.0936 13.0678 15.96 15.2357 14.0472 16.5676Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="cursor-pointer z-20 2xl:w-[40px] 2xl:h-[50px]"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M15.8249 3.50143V0.582581C21.5067 1.87197 25.7433 6.94453 25.7433 13.0089C25.7433 19.0733 21.5067 24.1459 15.8249 25.4353V22.5164C19.9198 21.2979 22.9094 17.5005 22.9094 13.0089C22.9094 8.51731 19.9198 4.71997 15.8249 3.50143ZM0.2388 8.75818V17.2597H5.90646L12.991 24.3443V1.67361L5.90646 8.75818H0.2388ZM19.3672 13.0089C19.3669 11.8217 19.0351 10.6582 18.4093 9.64934C17.7834 8.64049 16.8884 7.8264 15.8249 7.29876V18.7049C17.9219 17.6706 19.3672 15.5169 19.3672 13.0089Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                </div>
+                <span className="flex flex-col justify-center h-full text-center md:text-[38.26px] text-[25px] 2xl:text-[50px] text-white font-[700px] transform -translate-y-8">
+                  9 + 6 + 7x - 2x - 3
+                </span>
               </div>
-              <span className="flex flex-col justify-center h-full text-center md:text-[38.26px] text-[25px] 2xl:text-[50px] text-white font-[700px] transform -translate-y-8">
-                9 + 6 + 7x - 2x - 3
-              </span>
+              {/* Second div for flipped content */}
+              <div
+                className={`absolute mx-4 bg-linear rounded-3xl w-[420px] lg:w-[712px] 2xl:w-[1000px] md:h-[393.19px] 2xl:h-[500px] h-[270px] p-4 2xl:p-8 transform ${
+                  flipped ? "visible" : "invisible"
+                }`}
+                style={{ backfaceVisibility: "hidden", rotateY: 180 }}
+              >
+                <div className="flex w-full h-[30px] justify-between">
+                  <svg
+                    viewBox="0 0 20 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="cursor-pointer z-20 w-[20px] h-[30px] 2xl:w-[40px] 2xl:h-[50px]"
+                  >
+                    <path
+                      d="M5.75824 27.7612C5.75824 28.5405 6.39585 29.1781 7.17515 29.1781H12.8428C13.6221 29.1781 14.2597 28.5405 14.2597 27.7612V26.3443H5.75824V27.7612ZM10.009 0.839813C4.53969 0.839813 0.0905762 5.28893 0.0905762 10.7582C0.0905762 14.1305 1.77671 17.0918 4.34132 18.8913V22.0935C4.34132 22.8728 4.97893 23.5105 5.75824 23.5105H14.2597C15.039 23.5105 15.6766 22.8728 15.6766 22.0935V18.8913C18.2413 17.0918 19.9274 14.1305 19.9274 10.7582C19.9274 5.28893 15.4783 0.839813 10.009 0.839813ZM14.0472 16.5676L12.8428 17.4177V20.6766H7.17515V17.4177L5.97077 16.5676C5.03205 15.9168 4.26472 15.0486 3.73425 14.037C3.20378 13.0254 2.92593 11.9005 2.92441 10.7582C2.92441 6.84753 6.0983 3.67364 10.009 3.67364C13.9197 3.67364 17.0936 6.84753 17.0936 10.7582C17.0936 13.0678 15.96 15.2357 14.0472 16.5676Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="cursor-pointer z-20 2xl:w-[40px] 2xl:h-[50px]"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M15.8249 3.50143V0.582581C21.5067 1.87197 25.7433 6.94453 25.7433 13.0089C25.7433 19.0733 21.5067 24.1459 15.8249 25.4353V22.5164C19.9198 21.2979 22.9094 17.5005 22.9094 13.0089C22.9094 8.51731 19.9198 4.71997 15.8249 3.50143ZM0.2388 8.75818V17.2597H5.90646L12.991 24.3443V1.67361L5.90646 8.75818H0.2388ZM19.3672 13.0089C19.3669 11.8217 19.0351 10.6582 18.4093 9.64934C17.7834 8.64049 16.8884 7.8264 15.8249 7.29876V18.7049C17.9219 17.6706 19.3672 15.5169 19.3672 13.0089Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                </div>
+                <span className="flex flex-col justify-center h-full text-center md:text-[38.26px] text-[25px] 2xl:text-[50px] text-white font-[700px] transform -translate-y-8">
+                  19 + 5x
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-[500px]">
             <div className="flex justify-between w-[340px] lg:w-[712px] 2xl:w-[1000px] sm:px-5 lg:px-9 2xl:px-8 py-5">
               <span className="flex flex-col justify-center">
                 <svg
