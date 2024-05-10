@@ -5,21 +5,21 @@ I have cloned figma design of HyggeX static webpage using React + Tailwind CSS a
 
     1. Clone the repo
 
-        ### git clone https://github.com/khushboo-choudhary/hyggex.git
+>        ### git clone https://github.com/khushboo-choudhary/hyggex.git
 
-        ### cd hyggex
+>        ### cd hyggex
 
     2. Install NPM Packages
         
-        ### npm install
+>        ### npm install
 
     3. Build and Start the Server
             
-        ### npm start
+>        ### npm start
 
     4. Vercel Link 
 
-        ### `https://hyggex-lime.vercel.app/`    
+>        ### `https://hyggex-lime.vercel.app/`    
 
 
 ## How website look like
